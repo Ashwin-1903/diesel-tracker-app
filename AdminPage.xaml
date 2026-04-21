@@ -1,0 +1,96 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DieselTrackerApp.AdminPage"
+             BackgroundColor="#0D1117">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label Text="Admin Panel"
+                   FontSize="28"
+                   TextColor="White"
+                   FontAttributes="Bold"/>
+
+            <!-- USERS -->
+            <Label Text="Users"
+                   TextColor="#58A6FF"
+                   FontSize="18"/>
+
+            <CollectionView x:Name="userList">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Frame BackgroundColor="#161B22"
+                               CornerRadius="15"
+                               Padding="15"
+                               Margin="5">
+
+                            <Grid ColumnDefinitions="*,Auto">
+
+                                <Label Text="{Binding Username}"
+                                       TextColor="White"
+                                       VerticalOptions="Center"/>
+
+                                <Button Grid.Column="1"
+                                        Text="Block"
+                                        Clicked="OnBlockClicked"
+                                        BackgroundColor="#DA3633"
+                                        TextColor="White"
+                                        CornerRadius="10"/>
+
+                            </Grid>
+
+                        </Frame>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+            <!-- HISTORY -->
+            <Label Text="All Activity"
+                   TextColor="#58A6FF"
+                   FontSize="18"/>
+
+            <CollectionView x:Name="historyList">
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Frame BackgroundColor="#161B22"
+                               CornerRadius="15"
+                               Padding="15"
+                               Margin="5">
+
+                            <VerticalStackLayout Spacing="3">
+
+                                <Label Text="{Binding Username}"
+                                       TextColor="#58A6FF"/>
+
+                                <Label Text="{Binding Vehicle}"
+                                       TextColor="White"/>
+
+                                <Label Text="{Binding Distance, StringFormat='Distance: {0} km'}"
+                                       TextColor="Gray"/>
+
+                                <Label Text="{Binding Diesel, StringFormat='Diesel: {0:F2} L'}"
+                                       TextColor="LightGreen"/>
+
+                                <Label Text="{Binding Date}"
+                                       FontSize="12"
+                                       TextColor="Gray"/>
+
+                            </VerticalStackLayout>
+
+                        </Frame>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

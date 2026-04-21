@@ -1,0 +1,22 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:charts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             x:Class="DieselTrackerApp.ChartPage"
+             BackgroundColor="#121212">
+
+    <VerticalStackLayout Padding="20">
+
+        <Label Text="Fuel Analysis"
+               FontSize="22"
+               TextColor="White"
+               HorizontalOptions="Center"/>
+
+        <charts:ChartView x:Name="chartView"
+                          HeightRequest="300" />
+
+        <Button Text="Back"
+                Clicked="OnBackClicked"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

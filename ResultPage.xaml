@@ -1,0 +1,27 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DieselTrackerApp.ResultPage"
+             BackgroundColor="#121212">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <Label Text="Result"
+               FontSize="24"
+               TextColor="White"/>
+
+        <Label x:Name="dieselLabel"
+               FontSize="20"
+               TextColor="LightGreen"/>
+
+        <Label x:Name="suggestionLabel"
+               TextColor="White"/>
+
+        <Button Text="View Pie Chart"
+                Clicked="OnChartClicked"/>
+
+        <Button Text="Back"
+                Clicked="OnBackClicked"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

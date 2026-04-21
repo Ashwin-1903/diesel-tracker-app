@@ -1,0 +1,85 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DieselTrackerApp.DieselEntryPage"
+             Title="Diesel Calculator">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Vehicle Type -->
+            <Label Text="Vehicle Type"/>
+            <Picker x:Name="vehiclePicker" Title="Select Vehicle">
+                <Picker.Items>
+                    <x:String>Lorry</x:String>
+                    <x:String>Tipper</x:String>
+                    <x:String>Truck</x:String>
+                    <x:String>Trailer</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- RPM -->
+            <Label Text="Vehicle RPM"/>
+            <Entry x:Name="rpmEntry" Placeholder="Enter RPM" Keyboard="Numeric"/>
+
+            <!-- Weight -->
+            <Label Text="Load Weight (tons)"/>
+            <Entry x:Name="weightEntry" Placeholder="Enter Weight" Keyboard="Numeric"/>
+
+            <!-- Distance -->
+            <Label Text="Distance (km)"/>
+            <Entry x:Name="distanceEntry" Placeholder="Enter Distance" Keyboard="Numeric"/>
+
+            <!-- Road Type -->
+            <Label Text="Road Type"/>
+            <Picker x:Name="roadPicker" Title="Select Road">
+                <Picker.Items>
+                    <x:String>Highway</x:String>
+                    <x:String>City</x:String>
+                    <x:String>Village</x:String>
+                    <x:String>Hilly</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Driver Behaviour -->
+            <Label Text="Driver Behaviour"/>
+            <Picker x:Name="driverPicker" Title="Select Behaviour">
+                <Picker.Items>
+                    <x:String>Smooth</x:String>
+                    <x:String>Normal</x:String>
+                    <x:String>Aggressive</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Speed -->
+            <Label Text="Speed Range (km/h)"/>
+            <Entry x:Name="speedFrom" Placeholder="From" Keyboard="Numeric"/>
+            <Entry x:Name="speedTo" Placeholder="To" Keyboard="Numeric"/>
+
+            <!-- Tyre -->
+            <Label Text="Tyre Pressure"/>
+            <Entry x:Name="tyreEntry" Placeholder="Enter Tyre Pressure (psi)" Keyboard="Numeric"/>
+
+            <!-- Engine -->
+            <Label Text="Engine Condition (1-10)"/>
+            <Entry x:Name="engineEntry" Placeholder="Enter Condition" Keyboard="Numeric"/>
+
+            <!-- Button -->
+            <Button Text="Calculate Diesel"
+                    Clicked="OnCalculateDiesel"/>
+
+            <!-- Result -->
+            <Label x:Name="resultLabel"
+                   Text="Diesel Needed: 0 L"
+                   FontSize="20"
+                   HorizontalOptions="Center"/>
+
+            <!-- Logout -->
+            <Button Text="Logout"
+                    BackgroundColor="Red"
+                    TextColor="White"
+                    Clicked="OnLogoutClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
